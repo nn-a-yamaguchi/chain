@@ -20,8 +20,8 @@ class ChainModel {
         return $this;
     }
     
-    function not() {
-        $this->_Arel->not();
+    function whereNot($where) {
+        $this->_Arel->whereNot($where);
         return $this;
     }
 
@@ -53,10 +53,7 @@ class Arel {
         $this->sql = $sql;
     }
     
-    public function not() {
-        $this->not = true;
-        return $this;
-    }
+
 
     private function _getWhere() {
         if (count($this->where) == 0) {
@@ -70,7 +67,13 @@ class Arel {
         $this->toSql();
         return $this->sql;
     }
-
+    
+    public function whereNot($where) {
+        $this->not = true;
+        $this->where($where);
+        return $this;
+    }
+    
     public function where($where) {
             $whereSql = array();
             

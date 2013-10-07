@@ -28,11 +28,6 @@ class ChainModel {
 }
 
 class Arel {
-
-    public $class_name;
-    public $where;
-    public $not = false;
-
     public function setObject($object) {
         $this->object = $object;
 

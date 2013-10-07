@@ -5,4 +5,4 @@ require_once ROOT_DIR.'lib/config.php';
 
 $_CdUserCard = new CdUserCard();
 
-$_CdUserCard->where(array('userid' => 5, 'name' => 'test'))->find();
+$_CdUserCard->not()->where(array('userid' => 5, 'name' => 'test'))->where(array('delete_flg' => 1))->find();

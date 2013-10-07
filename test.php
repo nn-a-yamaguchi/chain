@@ -5,4 +5,4 @@ require_once ROOT_DIR.'lib/config.php';
 
 $_CdUserCard = new CdUserCard();
 
-print $_CdUserCard->find();
+$_CdUserCard->where(array('userid' => 5, 'name' => 'test'))->find();
